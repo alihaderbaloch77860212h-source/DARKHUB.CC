@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBG UC — Areeha Carding</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a1a;
+            overflow-x: hidden;
+        }
+        .bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 30%, #0a1a2e 60%, #0a0a1a 100%);
+            overflow: hidden;
+        }
+        .bg-canvas .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: orbFloat 20s ease-in-out infinite alternate;
+        }
+        .bg-canvas .orb:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            top: -10%;
+            left: -10%;
+            background: rgba(255, 204, 0, 0.08);
+            animation-duration: 25s;
+        }
+        .bg-canvas .orb:nth-child(2) {
+            width: 500px;
+            height: 500px;
+            bottom: -20%;
+            right: -10%;
+            background: rgba(233, 69, 96, 0.06);
+            animation-duration: 30s;
+            animation-delay: 3s;
+        }
+        .bg-canvas .orb:nth-child(3) {
+            width: 300px;
+            height: 300px;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 255, 136, 0.04);
+            animation-duration: 20s;
+            animation-delay: 5s;
+        }
+        @keyframes orbFloat {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(60px, -80px) scale(1.2);
+            }
+            66% {
+                transform: translate(-40px, 60px) scale(0.9);
+            }
+            100% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+        }
+        .bg-canvas .grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(rgba(255, 204, 0, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 204, 0, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridMove 40s linear infinite;
+        }
+        @keyframes gridMove {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(60px, 60px);
+            }
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            background: rgba(26, 26, 46, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 30px;
+            border-radius: 28px;
+            width: 500px;
+            border: 1px solid rgba(255, 204, 0, 0.12);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+            transition: all 0.3s ease;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffcc00, transparent);
+            animation: glowLine 5s ease-in-out infinite;
+            border-radius: 28px;
+        }
+        @keyframes glowLine {
+            0% {
+                left: -100%;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
+        }
+        .pubg-header {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+        .pubg-header .logo-wrap {
+            display: inline-block;
+            position: relative;
+        }
+        .pubg-header .logo-wrap img {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 2px solid #ffcc00;
+            box-shadow: 0 0 50px rgba(255, 204, 0, 0.12);
+            transition: 0.5s;
+        }
+        .pubg-header .logo-wrap:hover img {
+            transform: scale(1.05) rotate(-5deg);
+            box-shadow: 0 0 70px rgba(255, 204, 0, 0.2);
+        }
+        .pubg-header .logo-wrap .pulse-ring {
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 204, 0, 0.1);
+            animation: pulseRing 3s ease-out infinite;
+        }
+        @keyframes pulseRing {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        .pubg-header h2 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        .pubg-header h2 span {
+            color: #ffcc00;
+            text-shadow: 0 0 30px rgba(255, 204, 0, 0.15);
+        }
+        .pubg-header .sub {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+        .vip-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffcc00, #f5a623);
+            color: #000;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 18px;
+            border-radius: 30px;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: badgePulse 2.5s ease-in-out infinite;
+        }
+        @keyframes badgePulse {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(255, 204, 0, 0.1);
+            }
+            50% {
+                transform: scale(1.04);
+                box-shadow: 0 0 40px rgba(255, 204, 0, 0.2);
+            }
+        }
+        #formInterface {
+            display: block;
+        }
+        .input-group {
+            margin-bottom: 14px;
+        }
+        .input-group label {
+            color: rgba(255, 255, 255, 0.4);
+            display: block;
+            margin-bottom: 5px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 13px 16px;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+        }
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #ffcc00;
+            background: rgba(255, 204, 0, 0.04);
+            box-shadow: 0 0 30px rgba(255, 204, 0, 0.03);
+        }
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.15);
+        }
+        select option {
+            background: #1a1a2e;
+            color: #fff;
+        }
+        .uc-packs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 10px 0 6px 0;
+        }
+        .uc-pack {
+            flex: 1;
+            min-width: 60px;
+            padding: 10px 4px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .uc-pack:hover {
+            border-color: rgba(255, 204, 0, 0.2);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .uc-pack.selected {
+            border-color: #ffcc00;
+            background: rgba(255, 204, 0, 0.06);
+            color: #ffcc00;
+            box-shadow: 0 0 30px rgba(255, 204, 0, 0.04);
+            transform: translateY(-2px);
+        }
+        .uc-pack .price {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.15);
+            display: block;
+            margin-top: 2px;
+        }
+        .uc-pack.selected .price {
+            color: rgba(255, 204, 0, 0.6);
+        }
+        .row {
+            display: flex;
+            gap: 12px;
+        }
+        .row .input-group {
+            flex: 1;
+        }
+        .card-select-wrapper {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 0 14px;
+            transition: all 0.3s ease;
+        }
+        .card-select-wrapper:focus-within {
+            border-color: #ffcc00;
+            background: rgba(255, 204, 0, 0.04);
+        }
+        .card-select-wrapper select {
+            border: none;
+            background: transparent;
+            padding: 13px 0;
+            flex: 1;
+        }
+        .card-logo-svg {
+            width: 45px;
+            height: 30px;
+            margin-right: 12px;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.03));
+        }
+        .card-balance {
+            background: rgba(0, 255, 136, 0.03);
+            border: 1px solid rgba(0, 255, 136, 0.08);
+            border-radius: 12px;
+            padding: 12px 16px;
+            text-align: center;
+            margin-bottom: 14px;
+            transition: all 0.5s ease;
+        }
+        .card-balance span {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .card-balance strong {
+            color: #00ff88;
+            font-size: 20px;
+            display: block;
+            margin-top: 2px;
+            transition: all 0.5s ease;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.08);
+        }
+        .card-balance.deducting {
+            border-color: rgba(255, 68, 68, 0.15);
+            background: rgba(255, 68, 68, 0.03);
+        }
+        .card-balance.deducting strong {
+            color: #ff4444;
+        }
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #ffcc00, #e6b800);
+            color: #000;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn:hover {
+            transform: scale(0.98);
+            box-shadow: 0 0 60px rgba(255, 204, 0, 0.12);
+        }
+        .btn .shine {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 5s ease-in-out infinite;
+        }
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
+        }
+        .btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 10px;
+            margin-top: 14px;
+            letter-spacing: 1.5px;
+        }
+        .footer span {
+            color: rgba(255, 204, 0, 0.2);
+        }
+        .trusted {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.08);
+            letter-spacing: 1px;
+        }
+        .trusted span {
+            color: rgba(255, 204, 0, 0.15);
+        }
+        #processingInterface {
+            display: none;
+            text-align: center;
+        }
+        .processing-box {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 16px;
+            min-height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        .processing-box .scanline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(0deg, rgba(255, 204, 0, 0.015) 0px, rgba(255, 204, 0, 0.015) 2px, transparent 2px, transparent 6px);
+            pointer-events: none;
+        }
+        .loader {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.06);
+            border-radius: 50%;
+            border-top-color: #ffcc00;
+            animation: spin 0.7s linear infinite;
+            margin-bottom: 14px;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .status-text {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .status-detail {
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 12px;
+            margin-top: 4px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            margin-top: 18px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ffcc00, #f5a623);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 12px;
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .info-row .label {
+            color: rgba(255, 255, 255, 0.15);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-row .value {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+        .result-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .result-buttons .btn {
+            flex: 1;
+            font-size: 12px;
+            padding: 12px;
+        }
+        .btn-success {
+            background: linear-gradient(135deg, #00c853, #009624) !important;
+            color: #fff !important;
+        }
+        .btn-danger {
+            background: linear-gradient(135deg, #d32f2f, #b71c1c) !important;
+            color: #fff !important;
+        }
+        .back-btn {
+            background: rgba(255, 255, 255, 0.04) !important;
+            color: rgba(255, 255, 255, 0.3) !important;
+            margin-top: 10px;
+        }
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.08) !important;
+        }
+        .hidden {
+            display: none !important;
+        }
+        #successInterface {
+            display: none;
+            text-align: center;
+            animation: fadeUp 0.8s ease;
+        }
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.96);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        .success-box {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            box-shadow: 0 0 60px rgba(0, 255, 136, 0.02);
+            margin-bottom: 16px;
+        }
+        .success-box .icon {
+            font-size: 56px;
+            margin-bottom: 10px;
+            animation: pop 0.7s ease;
+        }
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .success-box h2 {
+            color: #00ff88;
+            font-size: 22px;
+            font-weight: 700;
+            text-shadow: 0 0 40px rgba(0, 255, 136, 0.06);
+        }
+        .success-box p {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+        .success-box .details {
+            margin-top: 16px;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 14px 16px;
+            border-radius: 12px;
+        }
+        .success-box .details .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .success-box .details .row:last-child {
+            border-bottom: none;
+        }
+        .success-box .details .label {
+            color: rgba(255, 255, 255, 0.2);
+        }
+        .success-box .details .value {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+        .success-box .details .value.green {
+            color: #00ff88;
+        }
+        .success-box .details .value.red {
+            color: #ff4444;
+        }
+        .success-box .balance-box {
+            background: rgba(0, 255, 136, 0.03);
+            border: 1px solid rgba(0, 255, 136, 0.06);
+            border-radius: 12px;
+            padding: 14px;
+            margin-top: 14px;
+        }
+        .success-box .balance-box span {
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .success-box .balance-box strong {
+            color: #00ff88;
+            font-size: 22px;
+            display: block;
+            margin-top: 2px;
+            text-shadow: 0 0 40px rgba(0, 255, 136, 0.06);
+        }
+
+        /* ===== HOME BUTTON IN SUCCESS ===== */
+        .home-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .home-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+        .home-btn .icon {
+            margin-right: 8px;
+        }
+        .timer-text {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-canvas">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="grid"></div>
+    </div>
+
+    <div class="container">
+
+        <div class="pubg-header">
+            <div class="logo-wrap">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%231a1a2e' stroke='%23ffcc00' stroke-width='2'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='40' font-weight='bold' fill='%23ffcc00' font-family='Arial'%3E🎯%3C/text%3E%3C/svg%3E" alt="PUBG">
+                <div class="pulse-ring"></div>
+            </div>
+            <h2>PUBG <span>UC</span></h2>
+            <div class="sub">Instant Delivery • Trusted Platform</div>
+            <div class="vip-badge">✦ VIP TRUSTED ✦</div>
+        </div>
+
+        <!-- ===== FORM ===== -->
+        <div id="formInterface">
+            <div class="input-group">
+                <label>🎮 Player ID</label>
+                <input type="text" id="pubgId" placeholder="Enter your PUBG ID" value="Mosa_x_786">
+            </div>
+
+            <div class="input-group">
+                <label>📦 Select UC Pack</label>
+                <div class="uc-packs" id="ucPacks">
+                    <div class="uc-pack" data-value="60" data-price="0.59">60<br><span class="price">$0.59</span></div>
+                    <div class="uc-pack" data-value="300" data-price="2.99">300<br><span class="price">$2.99</span></div>
+                    <div class="uc-pack" data-value="600" data-price="5.99">600<br><span class="price">$5.99</span></div>
+                    <div class="uc-pack" data-value="1200" data-price="11.99">1200<br><span class="price">$11.99</span></div>
+                    <div class="uc-pack" data-value="3000" data-price="29.99">3000<br><span class="price">$29.99</span></div>
+                    <div class="uc-pack" data-value="6000" data-price="59.99">6000<br><span class="price">$59.99</span></div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>💳 Select Card</label>
+                <div class="card-select-wrapper">
+                    <svg class="card-logo-svg" id="cardLogo" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="30" rx="4" fill="#1a1a3e"/>
+                        <rect x="4" y="4" width="20" height="22" rx="2" fill="#1a3a8a"/>
+                        <text x="10" y="20" font-size="10" fill="white" font-weight="bold">V</text>
+                        <text x="12" y="20" font-size="8" fill="white" opacity="0.6">ISA</text>
+                    </svg>
+                    <select id="cardSelect">
+                        <option value="card1" data-logo="visa">Visa •••• 4111 — Balance: $5000</option>
+                        <option value="card2" data-logo="master">Master •••• 5555 — Balance: $5000</option>
+                        <option value="card3" data-logo="visa">Visa •••• 4213 — Balance: $5000</option>
+                        <option value="card4" data-logo="amex">Amex •••• 3782 — Balance: $5000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card-balance" id="balanceBox">
+                <span>💰 Current Card Balance</span>
+                <strong id="balanceDisplay">$5,000.00</strong>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label>📅 Expiry</label>
+                    <input type="text" id="cardExpiry" placeholder="MM/YY" value="12/26" maxlength="5">
+                </div>
+                <div class="input-group">
+                    <label>🔐 CVV</label>
+                    <input type="password" id="cardCvv" placeholder="***" value="123" maxlength="3">
+                </div>
+            </div>
+
+            <button class="btn" id="sendBtn">
+                <span class="shine"></span>
+                🚀 Send / Process
+            </button>
+
+            <div class="footer"><span>🔒</span> Secured via Areeha Carding <span>🔒</span></div>
+            <div class="trusted"><span>✓</span> Trusted by 5,000+ PUBG Players <span>✓</span></div>
+        </div>
+
+        <!-- ===== PROCESSING ===== -->
+        <div id="processingInterface">
+            <div class="processing-box">
+                <div class="scanline"></div>
+                <div class="loader" id="loader"></div>
+                <div class="status-text" id="statusText">Initializing...</div>
+                <div class="status-detail" id="statusDetail">Connecting to server</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div id="infoDisplay">
+                <div class="info-row">
+                    <span class="label">ID</span>
+                    <span class="value" id="displayPubgId">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">UC Pack</span>
+                    <span class="value" id="displayUcAmount">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Card</span>
+                    <span class="value" id="displayCard">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Balance</span>
+                    <span class="value" style="color:#00ff88;" id="displayBalance">$5,000.00</span>
+                </div>
+            </div>
+
+            <div class="result-buttons hidden" id="resultButtons">
+                <button class="btn btn-success" id="doneBtn">✔ Done</button>
+                <button class="btn btn-danger" id="retryBtn">⟳ Retry</button>
+            </div>
+
+            <button class="btn back-btn" id="backBtn">⬅ Back</button>
+        </div>
+
+        <!-- ===== SUCCESS WITH HOME BUTTON ===== -->
+        <div id="successInterface">
+            <div class="success-box">
+                <div class="icon">✅</div>
+                <h2>Transaction Successful!</h2>
+                <p>Your UC has been added to your account</p>
+
+                <div class="details">
+                    <div class="row">
+                        <span class="label">PUBG ID</span>
+                        <span class="value" id="successPubgId">-</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">UC Added</span>
+                        <span class="value green" id="successUcAmount">-</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">Card Used</span>
+                        <span class="value" id="successCard">-</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">Amount Charged</span>
+                        <span class="value red" id="successCharged">-</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">Transaction ID</span>
+                        <span class="value" id="successTxnId">-</span>
+                    </div>
+                </div>
+
+                <div class="balance-box">
+                    <span>💰 Remaining Card Balance</span>
+                    <strong id="successBalance">$5,000.00</strong>
+                </div>
+            </div>
+
+            <!-- ===== HOME BUTTON ===== -->
+            <button class="home-btn" id="homeBtn">
+                <span class="icon">🏠</span> Home
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // ===== UC PACK SELECTION =====
+            const ucPacks = document.querySelectorAll('.uc-pack');
+            let selectedPack = null;
+            let selectedPrice = 0;
+
+            ucPacks.forEach(function(pack) {
+                pack.addEventListener('click', function() {
+                    ucPacks.forEach(function(p) {
+                        p.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                    selectedPack = parseInt(this.dataset.value);
+                    selectedPrice = parseFloat(this.dataset.price);
+                    console.log('✅ UC Pack Selected:', selectedPack, selectedPrice);
+                });
+            });
+
+            // ===== CARD LOGOS =====
+            const cardSelect = document.getElementById('cardSelect');
+            const cardLogo = document.getElementById('cardLogo');
+
+            const logoMap = {
+                'visa': `<svg viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="30" rx="4" fill="#1a1a3e"/>
+                            <rect x="4" y="4" width="20" height="22" rx="2" fill="#1a3a8a"/>
+                            <text x="10" y="20" font-size="10" fill="white" font-weight="bold">V</text>
+                            <text x="12" y="20" font-size="8" fill="white" opacity="0.6">ISA</text>
+                         </svg>`,
+                'master': `<svg viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="30" rx="4" fill="#1a1a3e"/>
+                            <circle cx="30" cy="15" r="10" fill="#EB001B" opacity="0.9"/>
+                            <circle cx="40" cy="15" r="10" fill="#F79E1B" opacity="0.9"/>
+                            <text x="57" y="20" font-size="9" fill="white" font-weight="bold">Master</text>
+                            <text x="57" y="28" font-size="6" fill="white" opacity="0.5">CARD</text>
+                         </svg>`,
+                'amex': `<svg viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="30" rx="4" fill="#1a1a3e"/>
+                            <rect x="4" y="4" width="92" height="22" rx="2" fill="#006FCF"/>
+                            <text x="10" y="20" font-size="12" fill="white" font-weight="bold">AMERICAN</text>
+                            <text x="70" y="20" font-size="10" fill="white" opacity="0.8">EXPRESS</text>
+                         </svg>`
+            };
+
+            const cardDisplay = {
+                'card1': 'Visa •••• 4111',
+                'card2': 'Master •••• 4444',
+                'card3': 'Visa •••• 1112',
+                'card4': 'Amex •••• 0005'
+            };
+
+            cardSelect.addEventListener('change', function() {
+                const logo = this.options[this.selectedIndex].dataset.logo;
+                cardLogo.innerHTML = logoMap[logo] || logoMap['visa'];
+            });
+
+            // ===== SEND BUTTON =====
+            const sendBtn = document.getElementById('sendBtn');
+            const pubgId = document.getElementById('pubgId');
+            const cardExpiry = document.getElementById('cardExpiry');
+            const cardCvv = document.getElementById('cardCvv');
+
+            let currentBalance = 5000;
+
+            sendBtn.addEventListener('click', function() {
+                const pubgIdVal = pubgId.value.trim();
+                const expiryVal = cardExpiry.value.trim();
+                const cvvVal = cardCvv.value.trim();
+
+                if (!selectedPack) {
+                    alert('❌ Please select a UC pack!');
+                    return;
+                }
+                if (pubgIdVal.length < 3) {
+                    alert('❌ Enter valid PUBG ID!');
+                    return;
+                }
+                if (expiryVal.length < 5) {
+                    alert('❌ Enter valid expiry (MM/YY)!');
+                    return;
+                }
+                if (cvvVal.length < 3) {
+                    alert('❌ Enter valid CVV!');
+                    return;
+                }
+
+                document.getElementById('formInterface').style.display = 'none';
+                document.getElementById('processingInterface').style.display = 'block';
+
+                const selectedVal = cardSelect.value;
+                document.getElementById('displayPubgId').textContent = pubgIdVal;
+                document.getElementById('displayUcAmount').textContent = selectedPack + ' UC ($' + selectedPrice.toFixed(2) + ')';
+                document.getElementById('displayCard').textContent = cardDisplay[selectedVal] || 'Visa •••• 1111';
+                document.getElementById('displayBalance').textContent = '$' + currentBalance.toFixed(2);
+
+                startProcessing();
+            });
+
+            // ===== PROCESSING =====
+            function startProcessing() {
+                const statusText = document.getElementById('statusText');
+                const statusDetail = document.getElementById('statusDetail');
+                const progressFill = document.getElementById('progressFill');
+
+                const steps = [
+                    { text: 'Connecting to PUBG server...', detail: 'Establishing secure connection', progress: 10 },
+                    { text: 'Verifying card details...', detail: 'Checking with payment gateway', progress: 25 },
+                    { text: 'Authorizing transaction...', detail: 'Waiting for approval', progress: 40 },
+                    { text: 'Processing UC purchase...', detail: 'Adding UC to account', progress: 60 },
+                    { text: 'Verifying payment...', detail: 'Cross-checking transaction', progress: 75 },
+                    { text: 'Finalizing order...', detail: 'Preparing confirmation', progress: 90 },
+                ];
+
+                let stepIndex = 0;
+
+                function nextStep() {
+                    if (stepIndex < steps.length) {
+                        const step = steps[stepIndex];
+                        statusText.textContent = step.text;
+                        statusDetail.textContent = step.detail;
+                        progressFill.style.width = step.progress + '%';
+                        stepIndex++;
+                        setTimeout(nextStep, 1100 + Math.random() * 500);
+                    } else {
+                        progressFill.style.width = '100%';
+                        setTimeout(function() {
+                            currentBalance = Math.max(0, currentBalance - selectedPrice);
+                            document.getElementById('displayBalance').textContent = '$' + currentBalance.toFixed(2);
+                            showSuccess();
+                        }, 600);
+                    }
+                }
+
+                setTimeout(function() {
+                    statusText.textContent = '▶ Starting transaction...';
+                    statusDetail.textContent = 'Preparing payment request';
+                    setTimeout(nextStep, 700);
+                }, 1000);
+            }
+
+            // ===== SUCCESS =====
+            function showSuccess() {
+                const pubgIdVal = document.getElementById('displayPubgId').textContent;
+                const ucAmount = document.getElementById('displayUcAmount').textContent;
+                const card = document.getElementById('displayCard').textContent;
+                const txnId = 'TXN' + Date.now().toString().slice(-8);
+                const charged = '$' + selectedPrice.toFixed(2);
+
+                document.getElementById('processingInterface').style.display = 'none';
+                document.getElementById('successInterface').style.display = 'block';
+
+                document.getElementById('successPubgId').textContent = pubgIdVal;
+                document.getElementById('successUcAmount').textContent = ucAmount;
+                document.getElementById('successCard').textContent = card;
+                document.getElementById('successCharged').textContent = charged;
+                document.getElementById('successTxnId').textContent = txnId;
+                document.getElementById('successBalance').textContent = '$' + currentBalance.toFixed(2);
+            }
+
+            // ===== HOME BUTTON =====
+            document.getElementById('homeBtn').addEventListener('click', function() {
+                location.reload();
+            });
+
+            // ===== OTHER BUTTONS =====
+            document.getElementById('doneBtn').addEventListener('click', showSuccess);
+            document.getElementById('retryBtn').addEventListener('click', function() {
+                location.reload();
+            });
+            document.getElementById('backBtn').addEventListener('click', function() {
+                location.reload();
+            });
+
+            // ===== EXPIRY FORMAT =====
+            document.getElementById('cardExpiry').addEventListener('input', function(e) {
+                let val = this.value.replace(/\D/g, '');
+                if (val.length >= 2) {
+                    val = val.slice(0, 2) + '/' + val.slice(2, 4);
+                }
+                this.value = val;
+            });
+
+        });
+    </script>
+
+</body>
+</html>
